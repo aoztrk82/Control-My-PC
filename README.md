@@ -1,7 +1,9 @@
 
 # Control My PC
  Its simple flask web server can be run from background and control from your pc from any LAN device with browser.İts tested on Windows PC and some features probably not available in other platforms.
+ 
 ![Screenshot](/static/screenshot1.png)
+
 ## Features
 
  1. Media Controls(Volume Up/Down/Mute, Playback Buttons)
@@ -28,5 +30,4 @@
  - [PsTools](https://docs.microsoft.com/en-us/sysinternals/downloads/pstools)
  - [HotSpot On/Off Script From This Comment](https://stackoverflow.com/a/65912082)
  - [Handyman Icon](https://material.io/resources/icons/?style=baseline)
-
 
