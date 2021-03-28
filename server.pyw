@@ -1,7 +1,7 @@
 #imports
 from flask import Flask, render_template, request
-from pynput.keyboard import Key, Controller
-from pynput.mouse import Button, Controller
+from pynput.keyboard import Key, Controller as KeyboardController
+from pynput.mouse import Button, Controller as MouseController
 from waitress import serve
 from PIL import Image
 import subprocess, os , webbrowser
@@ -9,8 +9,8 @@ import subprocess, os , webbrowser
 
 app = Flask(__name__)
 hosts_allow = []
-kb = Controller()
-m = Controller()
+kb = KeyboardController()
+m = MouseController()
 def url_open(url):
     firefox_path = 'C:/Program Files/Mozilla Firefox/firefox.exe %s'
     wb = webbrowser.get(firefox_path)
@@ -70,10 +70,17 @@ def main(name=None):
             wanted_url = request.form["wanted_url"]
             url_open(wanted_url)
             print("wanted url opened")
+        elif  request.form.get('send_text'):
+            wanted_text = request.form["wanted_text"]
+            kb.type(wanted_text)
+            print("text sended= " + wanted_text)
+        elif  request.form.get('f'):
+            kb.tap('f')
+            print("f")
 #Mause Controlss
 # -----------------------------------------------        
         elif  request.form.get('m_move_-3_3'):
-            m.move(-100, -100)
+            m.move(-100, -101)
             print("m_move_-3_3")
         elif  request.form.get('m_move_ust3'):
             m.move(0, -100)
@@ -150,7 +157,6 @@ def main(name=None):
         elif  request.form.get('m_right_click'):
             m.click(Button.right)
             print("m_right_click")
-
 # ----------------------------------------------- 
         else:
             print("undefined")
