@@ -3,12 +3,17 @@ from flask import Flask, render_template, request
 from pynput.keyboard import Key, Controller
 from waitress import serve
 from PIL import Image
-import subprocess
-import os
+import subprocess, os , webbrowser
+
 
 app = Flask(__name__)
 hosts_allow = []
 kb = Controller()
+
+def url_open(url):
+    firefox_path = 'C:/Program Files/Mozilla Firefox/firefox.exe %s'
+    wb = webbrowser.get(firefox_path)
+    wb.open(url,new=0,autoraise=True)
 
 #Webserver Codes
 @app.route('/', methods=['GET', 'POST'])
@@ -57,6 +62,9 @@ def main(name=None):
         elif  request.form.get('hotspot'):
             subprocess.call([r'hotspot.bat'])
             print("hotspot on/off")
+        elif  request.form.get('ymusic'):
+            url_open("https://music.youtube.com/watch?v=-mLpe7KUg9U&list=RDAMVM-mLpe7KUg9U")
+            print("youtube music opened")
         else:
             print("undefined")
             return render_template("main.html")
