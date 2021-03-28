@@ -2,7 +2,8 @@
 # Control My PC
  Its simple flask web server can be run from background and control from your pc from any LAN device with browser.İts tested on Windows PC and some features probably not available in other platforms.
  
-![Screenshot](/static/screenshot1.png)
+![Screenshot](/static/screenshot1.jpg)
+![Screenshot2](/static/screenshot2.jpg)
 
 ## Features
 
