@@ -16,12 +16,19 @@
  You can use app with 2 ways one in Virtual Environment and other one is native usage.
  
  1. Virtual Environment
+ 
  -Open Powershell in app folder
+ 
  -Activate Virtual Environment with `.\Scripts\activate`
+ 
  -Then `py server.pyw` it will start running access from 127.0.0.1:5000 or host ip adress from other device.
+ 
  2. Native
+
  -Install dependencies with `pip install -r requirements.txt`
+ 
  -Best way is match .pyw files with your pythonw.exe then double click file. 
+ 
  -But if you need to stop app you need to stop from task manager. İf you choose this way you can make this app start with boot. To do this make a scheduled task.
 
  
