@@ -1,6 +1,8 @@
+#imports
 from flask import Flask, render_template, request
 from pynput.keyboard import Key, Controller
 from waitress import serve
+from PIL import Image
 import subprocess
 import os
 
@@ -8,6 +10,7 @@ app = Flask(__name__)
 hosts_allow = []
 kb = Controller()
 
+#Webserver Codes
 @app.route('/', methods=['GET', 'POST'])
 def main(name=None):
     print(request.method)
@@ -61,4 +64,4 @@ def main(name=None):
             print("No Post Back Call")
     return render_template('main.html', name=name)
 
-serve(app, host='0.0.0.0', port=5000, threads=1) #WAITRESS!
+serve(app, host='0.0.0.0', port=5000, threads=1)#WAITRESS!
