@@ -23,6 +23,8 @@
  
  -Open Powershell in app folder
  
+ -Before activate you may need to write this code `set-executionpolicy remotesigned`
+ 
  -Activate Virtual Environment with `.\Scripts\activate`
  
  -Then `py server.pyw` it will start running access from 127.0.0.1:5000 or host ip adress from other device.
