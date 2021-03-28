@@ -12,9 +12,13 @@
 
  1. Media Controls(Volume Up/Down/Mute, Playback Buttons)
  2. Arrow Keys
- 3. Hotspot On/Off
- 4. Youtube Music
- 5. Pc Power Controls (Shotdown/Sleep/Restart)
+ 3. Mouse Control
+ 4. Text type
+ 5. Url Open
+ 6. 'F' for Fullscreen
+ 7. Hotspot On/Off
+ 8. Youtube Music
+ 9. Pc Power Controls (Shotdown/Sleep/Restart)
  
 ## Usage
  You can use app with 2 ways one in Virtual Environment and other one is native usage.
