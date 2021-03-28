@@ -1,6 +1,7 @@
 #imports
 from flask import Flask, render_template, request
 from pynput.keyboard import Key, Controller
+from pynput.mouse import Button, Controller
 from waitress import serve
 from PIL import Image
 import subprocess, os , webbrowser
@@ -9,7 +10,7 @@ import subprocess, os , webbrowser
 app = Flask(__name__)
 hosts_allow = []
 kb = Controller()
-
+m = Controller()
 def url_open(url):
     firefox_path = 'C:/Program Files/Mozilla Firefox/firefox.exe %s'
     wb = webbrowser.get(firefox_path)
@@ -69,6 +70,88 @@ def main(name=None):
             wanted_url = request.form["wanted_url"]
             url_open(wanted_url)
             print("wanted url opened")
+#Mause Controlss
+# -----------------------------------------------        
+        elif  request.form.get('m_move_-3_3'):
+            m.move(-100, -100)
+            print("m_move_-3_3")
+        elif  request.form.get('m_move_ust3'):
+            m.move(0, -100)
+            print("m_move_ust3")
+        elif  request.form.get('m_move_3_3'):
+            m.move(100, -100)
+            print("m_move_2_2")
+        elif  request.form.get('m_move_-2_2'):
+            m.move(-50, -50)
+            print("m_move_-2_2")
+        elif  request.form.get('m_move_ust2'):
+            m.move(0, -50)
+            print("m_move_ust2")
+        elif  request.form.get('m_move_2_2'):
+            m.move(50, -50)
+            print("m_move_2_2")
+        elif  request.form.get('m_move_-1_1'):
+            m.move(-10, -10)
+            print("m_move_-1_1")
+        elif  request.form.get('m_move_ust1'):
+            m.move(0, -10)
+            print("m_move_ust1")
+        elif  request.form.get('m_move_1_1'):
+            m.move(10, -10)
+            print("m_move_1_1")
+        elif  request.form.get('m_move_sol3'):
+            m.move(-100, 0)
+            print("m_move_sol3")
+        elif  request.form.get('m_move_sol2'):
+            m.move(-50, 0)
+            print("m_move_sol2")
+        elif  request.form.get('m_move_sol1'):
+            m.move(-10, 0)
+            print("m_move_sol1")
+        elif  request.form.get('m_move_sag3'):
+            m.move(100, 0)
+            print("m_move_sag3")
+        elif  request.form.get('m_move_sag2'):
+            m.move(50, 0)
+            print("m_move_sag2")
+        elif  request.form.get('m_move_sag1'):
+            m.move(10, 0)
+            print("m_move_sag1")
+        elif  request.form.get('m_move_-1_-1'):
+            m.move(-10, 10)
+            print("m_move_-1_-1")
+        elif  request.form.get('m_move_alt1'):
+            m.move(0, 10)
+            print("m_move_alt1")
+        elif  request.form.get('m_move_1_-1'):
+            m.move(10, 10)
+            print("m_move_1_-1")
+        elif  request.form.get('m_move_-2_-2'):
+            m.move(-50, 50)
+            print("m_move_-2_-2")
+        elif  request.form.get('m_move_alt2'):
+            m.move(0, 50)
+            print("m_move_alt2")
+        elif  request.form.get('m_move_2_-2'):
+            m.move(50, 50)
+            print("m_move_2_-2")
+        elif  request.form.get('m_move_-3_-3'):
+            m.move(-100, 100)
+            print("m_move_-3_-3")
+        elif  request.form.get('m_move_alt3'):
+            m.move(0, 100)
+            print("m_move_alt3")
+        elif  request.form.get('m_move_3_-3'):
+            m.move(100, 100)
+            print("m_move_3_-3")
+        elif  request.form.get('m_left_click'):
+            m.click(Button.left)
+            print("m_left_click")
+        elif  request.form.get('m_right_click'):
+            m.click(Button.right)
+            print("m_right_click")
+
+# ----------------------------------------------- 
         else:
             print("undefined")
             return render_template("main.html")
