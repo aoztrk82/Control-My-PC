@@ -65,6 +65,10 @@ def main(name=None):
         elif  request.form.get('ymusic'):
             url_open("https://music.youtube.com/watch?v=-mLpe7KUg9U&list=RDAMVM-mLpe7KUg9U")
             print("youtube music opened")
+        elif  request.form.get('open_url'):
+            wanted_url = request.form["wanted_url"]
+            url_open(wanted_url)
+            print("wanted url opened")
         else:
             print("undefined")
             return render_template("main.html")
