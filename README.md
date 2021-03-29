@@ -40,7 +40,7 @@
  -Best way is match .pyw files with your pythonw.exe then double click file. 
  
  -But if you need to stop app you need to stop from task manager. İf you choose this way you can make this app start with boot. To do this make a scheduled task.
-
+Note: For sleep button work you need to download PsTools and copy psshutdown.exe to C drive, and browser is default mozilla i didn't try with other ones if buttons dont work pls change code or install mozilla.
 
 **Credits**
 
